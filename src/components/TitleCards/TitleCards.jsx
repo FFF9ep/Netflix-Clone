@@ -19,7 +19,7 @@ const TitleCards = ({title,category}) => {
     cardsRef.current.scrollLeft += event.deltaY;
   }
   useEffect(()=>{
-    fetch(`https://api.themoviedb.org/3/movie/${category?category:"now_playing"}now_playing?language=en-US&page=1`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${category?category:"now_playing"}?now_playing?language=en-US&page=1`, options)
     .then(res => res.json())
     .then(res => setApiData(res.results))
     .catch(err => console.error(err));
